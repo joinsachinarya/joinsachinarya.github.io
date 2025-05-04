@@ -10,23 +10,27 @@
   <title>Sachin Arya</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
+
+
     body {
       background: #0a0a0a;
       color: #ededed;
       font-family: Arial, Helvetica, sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .light-theme {
       background: #ffffff;
       color: #171717;
+      a {
+        color: #171717;
+      }
     }
   </style>
 </head>
 
 <body class="">
-  <div class="max-w-xl mx-auto px-8 py-12">
-    <header class="flex justify-between items-center mb-12">
+  <div class="max-w-xl mx-auto px-8 pb-12">
+    <header class="flex justify-between items-center sticky top-0 py-12 bg-[#0a0a0a]">
       <h1 class="text-lg font-bold">
         <a href="/" class="hover:text-gray-700">Sachin Arya</a>
       </h1>
@@ -37,6 +41,105 @@
         </label>
       </nav>
     </header>
+
+    <main>
+      <div class="text-sm">
+        I'm a Software Engineer and a Art Aficionado. I work at <a href="http://in.linkedin.com/company/preplaced"
+          target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">Preplaced</a> as Software
+        Development
+        Engineer.
+      </div>
+
+      <div class="flex w-full justify-between">
+        <div class="w-[60%]">
+          <h2 class="font-medium mt-8 mb-3 text-sm">
+            Projects
+          </h2>
+
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="pl-1 text-sm">
+              <a href="https://super-meet.vercel.app/" target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">Super Meet</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="https://super-image-ai.vercel.app/" target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">Super Image AI</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="https://www.npmjs.com/package/react-super-forms-library" target="_blank"  class="text-gray-500 hover:text-[#ededed] hover:underline">React Super Form</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="projects.html" class="text-gray-500 hover:text-[#ededed] hover:underline">More</a>
+            </li>
+          </ul>
+
+          <h2 class="font-medium mt-8 mb-3 text-sm">
+            Blogs
+          </h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="pl-1 text-sm">
+              <a href="https://medium.com/@joinsachinarya/birdeye-software-engineer-frontend-interview-experience-d52e8d00499f"
+                target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">BirdEye interview
+                experience</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="https://medium.com/@joinsachinarya/generator-functions-in-javascript-do-we-really-need-them-c49cc4783d3b"
+                target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">Generator Function</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="blogs.html" class="text-gray-500 hover:text-[#ededed] hover:underline">More</a>
+            </li>
+          </ul>
+
+
+          <h2 class="font-medium mt-8 mb-3 text-sm">
+            Videos
+          </h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="pl-1 text-sm">
+              <a href="https://youtu.be/Kt8RWZz9ETM?si=Q9wYmedE03VGyKU1" target="_blank"
+                class="text-gray-500 hover:text-[#ededed] hover:underline">Two minutes two seconds plank</a>
+            </li>
+            <li class="pl-1 text-sm">
+              <a href="videos.html" class="text-gray-500 hover:text-[#ededed] hover:underline">More</a>
+            </li>
+          </ul>
+
+          <h2 class="font-medium mt-8 mb-3 text-sm">
+            Others
+          </h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="pl-1 text-sm">
+              <a href="https://drive.google.com/file/d/1PW0XWX657m0xGpzR4jGFlaLFdzTgPYE7/view?usp=drive_link"
+                target="_blank" class="text-gray-500 hover:text-[#ededed] hover:underline">Resume</a>
+            </li>
+            <li class="pl-1 text-sm" onclick="">
+              <a href="others.html" class="text-gray-500 hover:text-[#ededed] hover:underline">More</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-[40%]">
+          <h2 class="mt-8 w-full flex items-center justify-end">
+            <img src="public/linkedin.png" alt="avatar" class="w-[100px] h-[100px] rounded-full">
+          </h2>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-12 text-center">
+      <div class="flex justify-center space-x-4 tracking-tight">
+        <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">twitter / x</a>
+        <a href="mailto:joinsachinarya@gmail.com" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">email</a>
+        <a href="https://github.com/joinsachinarya" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">github</a>
+        <a href="https://www.linkedin.com/in/joinsachinarya" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">linkedin</a>
+        <a href="https://www.youtube.com/@joinsachinarya" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">youtube</a>
+        <a href="https://www.instagram.com/@joinsachinarya" target="_blank" rel="noopener noreferrer"
+          class="text-gray-500 hover:underline text-xs">more</a>
+      </div>
+    </footer>
   </div>
   <script src="index.js"></script>
 </body>

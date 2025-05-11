@@ -1,13 +1,136 @@
 body {
-    background: #0a0a0a;
-    color: #ededed;
-    font-family: Arial, Helvetica, sans-serif;
+  background: #0a0a0a;
+  color: #ededed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.light-theme {
+  background: #ffffff;
+  color: #171717;
+
+  a {
+    color: #626262;
+  }
+}
+
+
+
+
+
+.skill-animation-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+}
+
+.skill-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  animation: spreadFade 8s ease-out forwards;
+}
+
+.skill-logo:nth-child(1) {
+  --end-x: -140px;
+  --end-y: -120px;
+  animation-delay: 0s;
+}
+
+.skill-logo:nth-child(2) {
+  --end-x: -120px;
+  --end-y: -80px;
+  animation-delay: 1s;
+}
+
+.skill-logo:nth-child(3) {
+  --end-x: -100px;
+  --end-y: -50px;
+  animation-delay: 2s;
+}
+
+.skill-logo:nth-child(4) {
+  --end-x: -160px;
+  --end-y: 40px;
+  animation-delay: 3s;
+}
+
+.skill-logo:nth-child(5) {
+  --end-x: -140px;
+  --end-y: 80px;
+  animation-delay: 4s;
+}
+
+.skill-logo:nth-child(6) {
+  --end-x: -120px;
+  --end-y: 110px;
+  animation-delay: 5s;
+}
+
+.skill-logo:nth-child(7) {
+  --end-x: -180px;
+  --end-y: -40px;
+  animation-delay: 6s;
+}
+
+.skill-logo:nth-child(8) {
+  --end-x: -160px;
+  --end-y: 140px;
+  animation-delay: 7s;
+}
+
+.skill-logo:nth-child(9) {
+  --end-x: -200px;
+  --end-y: 60px;
+  animation-delay: 8s;
+}
+
+@keyframes spreadFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 
-  .light-theme {
-    background: #ffffff;
-    color: #171717;
-    a {
-      color: #626262;
-    }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--end-x), var(--end-y)) scale(0.5);
+    opacity: 0;
   }
+}
+
+.skill-logo {
+  animation-iteration-count: infinite;
+}
+
+
+
+.equalizer {
+  display: inline-flex;
+  align-items: flex-end;
+  cursor: pointer;
+  user-select: none;
+}
+
+.equalizer span {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: equalize var(--d, 1s) var(--l, 0s) ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.equalizer.playing span {
+  animation-play-state: running;
+}
+
+@keyframes equalize {
+  0%,
+  100% {
+    transform: scaleY(0.8);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}

@@ -74,3 +74,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isPlaying) playRandomTrack();
   });
 });
+
+function injectHeaderFooter() {
+  const headerHTML = `
+    <header class="flex justify-between items-center sticky top-0 py-12 bg-[#0a0a0a] z-[1]">
+      <h1 class="text-lg font-bold">
+        <a href="/" class="hover:text-gray-700">Sachin Arya</a>
+      </h1>
+      <nav class="space-x-6 text-xs">
+        <label for="theme-toggle" class="theme-toggle-label cursor-pointer" onclick="toggleTheme()">
+          <img src="public/sun.svg" alt="Toggle theme" id="theme-toggle-icon" class="w-4 h-4 hover:opacity-75">
+        </label>
+      </nav>
+    </header>
+  `;
+  const footerHTML = `
+    <footer class="mt-12 text-center">
+      <div class="flex justify-center space-x-4 tracking-tight">
+        <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">twitter / x</a>
+        <a href="mailto:joinsachinarya@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">email</a>
+        <a href="https://github.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">github</a>
+        <a href="https://www.linkedin.com/in/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">linkedin</a>
+        <a href="https://www.youtube.com/@joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">youtube</a>
+        <a href="https://www.instagram.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">more</a>
+      </div>
+    </footer>
+  `;
+  const container = document.querySelector('.max-w-xl');
+  if (container) {
+    const oldHeader = container.querySelector('header');
+    if (oldHeader) oldHeader.outerHTML = headerHTML;
+    const oldFooter = container.querySelector('footer');
+    if (oldFooter) oldFooter.outerHTML = footerHTML;
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', injectHeaderFooter);
+} else {
+  injectHeaderFooter();
+}

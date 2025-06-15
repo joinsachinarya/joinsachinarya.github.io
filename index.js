@@ -76,10 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function injectHeaderFooter() {
+  const isHome = window.location.pathname === '/';
   const headerHTML = `
     <header class="flex justify-between items-center sticky top-0 py-12 bg-[#0a0a0a] z-[1]">
-      <h1 class="text-lg font-bold">
-        <a href="/" class="hover:text-gray-700">Sachin Arya</a>
+      <h1 class="text-lg font-bold flex items-center">
+        <a href="/" class="hover:text-gray-700 flex items-center gap-1">
+        <span class="text-xs">${!isHome ? '&larr;' : ''}</span>
+        Sachin Arya
+        </a>
       </h1>
       <nav class="space-x-6 text-xs">
         <label for="theme-toggle" class="theme-toggle-label cursor-pointer" onclick="toggleTheme()">
@@ -89,7 +93,7 @@ function injectHeaderFooter() {
     </header>
   `;
   const footerHTML = `
-    <footer class="text-center fixed bottom-12 md:left-[38%] left-[20%]">
+    <footer class="text-center fixed bottom-12 md:left-[38%] left-[20%] backdrop-blur-sm py-1 px-2 rounded-sm">
       <div class="flex justify-center space-x-4 tracking-tight">
         <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">x</a>
         <a href="mailto:joinsachinarya@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">email</a>
@@ -107,6 +111,7 @@ function injectHeaderFooter() {
     const oldFooter = container.querySelector('footer');
     if (oldFooter) oldFooter.outerHTML = footerHTML;
   }
+  document.body.classList.remove('hidden');
 }
 
 if (document.readyState === 'loading') {

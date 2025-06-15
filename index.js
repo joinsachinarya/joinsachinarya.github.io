@@ -1,6 +1,6 @@
 const setTheme = (theme) => {
   const isLightTheme = theme === 'light';
-  const iconSrc = isLightTheme ? "public/moon.svg" : "public/sun.svg";
+  const iconSrc = isLightTheme ? "public/moon.svg" : "public/sun.svg" || '';
   const headerClass = isLightTheme ? "bg-[#ffffff]" : "bg-[#0a0a0a]";
   const oppositeHeaderClass = isLightTheme ? "bg-[#0a0a0a]" : "bg-[#ffffff]";
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function playRandomTrack() {
     const idx = Math.floor(Math.random() * tracks.length);
-    audio.src = tracks[idx];
+    audio.src = tracks[idx] || '';
     audio.play();
   }
 
@@ -80,8 +80,8 @@ function injectHeaderFooter() {
   const headerHTML = `
     <header class="flex justify-between items-center sticky top-0 py-12 bg-[#0a0a0a] z-[1]">
       <h1 class="text-lg font-bold flex items-center">
-        <a href="/" class="hover:text-gray-700 flex items-center gap-1">
-        <span class="text-xs">${!isHome ? '&larr;' : ''}</span>
+        <a href="/" class="hover:text-gray-700 flex items-center">
+        ${!isHome ? '<span class="text-xs pr-1">&larr;</span>' : ''}
         Sachin Arya
         </a>
       </h1>

@@ -89,9 +89,9 @@ function injectHeaderFooter() {
     </header>
   `;
   const footerHTML = `
-    <footer class="mt-12 text-center">
+    <footer class="text-center fixed bottom-12 md:left-[38%] left-[20%]">
       <div class="flex justify-center space-x-4 tracking-tight">
-        <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">twitter / x</a>
+        <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">x</a>
         <a href="mailto:joinsachinarya@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">email</a>
         <a href="https://github.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">github</a>
         <a href="https://www.linkedin.com/in/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">linkedin</a>

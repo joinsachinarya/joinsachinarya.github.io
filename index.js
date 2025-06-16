@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function injectHeaderFooter() {
-  const isHome = window.location.pathname === '/';
+  const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
   const headerHTML = `
     <header class="flex justify-between items-center sticky top-0 py-12 bg-[#0a0a0a] z-[1]">
       <h1 class="text-lg font-bold flex items-center">
@@ -93,7 +93,7 @@ function injectHeaderFooter() {
     </header>
   `;
   const footerHTML = `
-    <footer class="text-center fixed bottom-12 md:left-[38%] left-[20%] backdrop-blur-sm py-1 px-2 rounded-sm">
+    <footer class="text-center fixed bottom-12 md:left-[40%] left-[16%] backdrop-blur-sm py-1 px-2 rounded-sm">
       <div class="flex justify-center space-x-4 tracking-tight">
         <a href="https://x.com/joinsachinarya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">x</a>
         <a href="mailto:joinsachinarya@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:underline text-xs">email</a>

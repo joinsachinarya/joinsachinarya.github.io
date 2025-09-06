@@ -1,6 +1,6 @@
 const setTheme = (theme) => {
   const isLightTheme = theme === 'light';
-  const iconSrc = isLightTheme ? "public/moon.svg" : "public/sun.svg" || '';
+  const iconSrc = isLightTheme ? "public/moon.svg" : "public/sun.svg";
   const headerClass = isLightTheme ? "bg-[#ffffff]" : "bg-[#0a0a0a]";
   const oppositeHeaderClass = isLightTheme ? "bg-[#0a0a0a]" : "bg-[#ffffff]";
 
@@ -19,7 +19,14 @@ const toggleTheme = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme');
+  if (!savedTheme) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      savedTheme = 'dark';
+    } else {
+      savedTheme = 'light';
+    }
+  }
   setTheme(savedTheme);
 });
 
